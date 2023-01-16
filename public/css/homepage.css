@@ -2,3 +2,71 @@
     min-height: 100vh;
     width: 100%;
 }
+
+.navBarContainer{
+    height: 10vh;
+    width: 100%;
+    background-color: green;
+    display: flex;
+}
+
+.navIconContainer{
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navListContainer{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeNavDiv{
+    color: white;
+    height: 100%;
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.homeNavDiv a{
+    cursor: pointer;
+    text-decoration: none;
+
+    color: white;
+}
+
+.homeNavDiv a:hover{
+    color: navy;
+}
+
+.addNavDiv{
+    font-family: sans-serif;
+    color: white;
+    height: 100%;
+    width:40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addNavDiv a{
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.addNavDiv a:hover{
+    color: navy;
+}

@@ -1,0 +1,18 @@
+<%-include('./includes/head.ejs');-%>
+<body>
+    
+    <div class="homeContainer">
+        <%- include('./includes/navigation.ejs');-%>
+       <form method="post" action="/add-blog">
+            <div>
+                <label>Title</label>
+                <input type="text" name="title"/>
+            </div>
+            <div>
+                <label>Description</label>
+                <textarea rows="5" cols="50" name="description"></textarea>
+            </div>
+       </form>
+    </div>
+</body>
+<%-include('./includes/end.ejs');-%>
