@@ -9,7 +9,7 @@ router.route("/add-blog").get((req,res)=>{
     res.status(200).render('add-blog',{pageTitle:"Blog"})
 })
 
-router.route("/add-product").post((req,res)=>{
+router.route("/add-blog").post((req,res)=>{
     console.log(req.body)
 })
 
