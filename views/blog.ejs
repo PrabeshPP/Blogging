@@ -2,6 +2,13 @@
 <body>
     <div class="homeContainer">
         <%- include('./includes/navigation.ejs');-%>
+        <% if(blogs.length==0){%>
+            <h1>Nothing to Show</h1>
+        <%}else{%>
+            <% blogs.map((blog)=>{%>
+                <h1><%=blog.title%></h1>
+            <%})%>
+        <%}%>
     </div>
 </body>
 <%-include('./includes/end.ejs');-%>

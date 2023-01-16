@@ -1,16 +1,12 @@
 const express=require("express")
 const router=express.Router()
 
-router.route("/").get((req,res)=>{
-    res.status(200).render('blog',{pageTitle:"Home"})
-})
+const {getBlogForm,postBlogs,getBlogs}=require("../controller/blog")
 
-router.route("/add-blog").get((req,res)=>{
-    res.status(200).render('add-blog',{pageTitle:"Blog"})
-})
+router.route("/").get(getBlogs)
 
-router.route("/add-blog").post((req,res)=>{
-    console.log(req.body)
-})
+router.route("/add-blog").get(getBlogForm)
+
+router.route("/add-blog").post(postBlogs)
 
 module.exports=router
