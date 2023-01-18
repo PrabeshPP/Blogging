@@ -70,3 +70,19 @@
 .addNavDiv a:hover{
     color: navy;
 }
+
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.line-clamp{
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: pre-line;
+}
