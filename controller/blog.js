@@ -6,11 +6,17 @@ const getBlogs=async(req,res,next)=>{
 }
 
 const getDetailBlog=async(req,res,next)=>{
+    const edit=req.query.edit
     const blogId=req.params.id
     const result=await Blog.findOne({where:{
         id:blogId
     }})
-    res.status(200).render('blog-detail',{'blog':result})
+
+    if (edit){
+        res.status(200).render('update.ejs',{'blog':result})
+    }else{
+        res.status(200).render('blog-detail',{'blog':result})
+    }
 }
 
 //delete the Blog
@@ -39,4 +45,19 @@ const postBlogs=async(req,res,next)=>{
     res.redirect('/')
 }
 
-module.exports={getBlogForm,getBlogs,postBlogs,getDetailBlog,deleteBlog }
+const updateBlogs=async(req,res,next)=>{
+    const blogId=req.params.id
+    const updatedTitle=req.body.title
+    const updatedDescription=req.body.description
+
+    const blog=await Blog.findOne({where:{
+        id:blogId
+    }})
+    blog.title=updatedTitle
+    blog.description=updatedDescription
+    const result=await blog.save()
+    res.redirect(`/blogs/${blogId}`)
+    
+}
+
+module.exports={getBlogForm,getBlogs,postBlogs,getDetailBlog,deleteBlog,updateBlogs }
