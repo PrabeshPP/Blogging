@@ -1,6 +1,10 @@
 const Blog=require("../model/blog")
 
 const getBlogs=async(req,res,next)=>{
+    const isAuthenticated=req.session.isAuthenticated;
+    if (isAuthenticated){
+        
+    }
     const blogs=await Blog.findAll()
     res.status(200).render('blog',{'blogs':blogs})
 }

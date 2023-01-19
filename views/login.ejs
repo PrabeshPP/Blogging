@@ -1,0 +1,12 @@
+<%-include('./includes/head.ejs');-%>
+<body>
+    <div class="homeContainer">
+       <form method="post" action="/authentication/login" class="w-[100%] min-h-[90vh]  flex flex-col items-center bg-red">
+            <input type="email" name="email" placeholder="Email" required/>
+            <input type="password" name="password" placeholder="Password" required/>
+            <button>Login</button>       
+       </form>
+    </div>
+    <script></script>
+</body>
+<%-include('./includes/end.ejs');-%>
