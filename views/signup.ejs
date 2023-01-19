@@ -1,0 +1,15 @@
+<%-include('./includes/head.ejs');-%>
+<body>
+    
+    <div class="homeContainer">
+       <form method="post" action="/signup" class="w-[100%] min-h-[90vh]  flex flex-col items-center bg-red">
+            <input type="text" placeholder="First Name" required/>
+            <input type="text" placeholder="Last Name" required/>
+            <input type="email" placeholder="Email" required/>
+            <input type="password" placeholder="Password" required/>
+            <button>Sign Up</button>       
+       </form>
+    </div>
+    <script></script>
+</body>
+<%-include('./includes/end.ejs');-%>

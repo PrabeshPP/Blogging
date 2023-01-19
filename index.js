@@ -10,6 +10,8 @@ dotenv.config()
 
 const sequelize=require("./util/db")
 const blogRouter=require("./routes/blog")
+const authenticationRouter=require("./routes/authentication")
+
 const PORT=process.env.PORT
 app.set('view engine','ejs')
 app.set('views','views')
@@ -18,7 +20,7 @@ app.set('views','views')
 app.use(express.urlencoded({extended:false}))
 app.use(express.static(path.join(__dirname,"public")))
 app.use(blogRouter)
-
+app.use("/authentication",authenticationRouter)
 app.use((req,res,next)=>{
     res.render("404",{pageTitle:"404 Not Found"})
 })
