@@ -9,12 +9,14 @@
             <div class="w-[100%] pl-5 box-border text-xl font-sans whitespace-pre-line">
                 <%=blog.description%>
             </div>
+           <% if(blog.userId==userId){%>
             <div class="h-[10vh] w-[100%] flex flex-row box-border mt-10">
                 <form action="/delete/<%=blog.id%>" class="h-[80%] w-[20%] ml-5" method="post">
                     <button class="h-[100%] w-[100%] bg--500 flex justify-center items-center bg-red-500 text-white text-xl font-medium cursor-pointer hover:bg-red-900" type="submit">Delete</button>
                 </form>
                 <a href="/blogs/<%=blog.id%>?edit=true" class="h-[80%] w-[20%] bg-yellow-500 flex justify-center items-center text-white text-xl font-medium ml-5 cursor-pointer hover:bg-gray-900">Update</a>
             </div>
+            <%}%>
         </div>
     </div>
 </body>

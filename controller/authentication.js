@@ -64,4 +64,12 @@ const authenticateLogin=async(req,res)=>{
 
 }
 
-module.exports={getSignUpForm,createUser,getLoginForm,authenticateLogin}
+
+const postLogoutUser=(req,res)=>{
+    req.session.destroy(err=>{
+        console.log(err)
+        res.redirect('/')
+    })
+}
+
+module.exports={getSignUpForm,createUser,getLoginForm,authenticateLogin,postLogoutUser}

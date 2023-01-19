@@ -4,6 +4,8 @@ const app=express();
 const path=require("path")
 const session=require("express-session")
 const SequelizeStore=require("connect-session-sequelize")(session.Store)
+const Blog=require("./model/blog")
+const User=require("./model/user")
 
 
 
@@ -46,6 +48,11 @@ app.use("/authentication",authenticationRouter)
 app.use((req,res,next)=>{
     res.render("404",{pageTitle:"404 Not Found"})
 })
+
+User.hasMany(Blog)
+Blog.belongsTo(User,{constraints:true,onDelete:"CASCADE"})
+
+
 
 async function main(){
     try{

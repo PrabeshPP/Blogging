@@ -1,12 +1,21 @@
-<nav class="navBarContainer">
-    <div class="navIconContainer">
+<nav class="h-[10vh] w-[100%] flex flex-row bg-purple-600">
+    <div class="h-[100%] w-[30%] flex justify-center items-center text-white font-bold text-2xl">
         Prabesh's Blog
     </div>
-    <div class="navListContainer">
-        <div class="homeNavDiv">
-            <a href="/">Home</a>
-        </div>
-        <div class="addNavDiv">
-            <a href="/add-blog">Add-Blog</a></div>
+    <div class="h-[100%] w-[70%] flex items-center justify-around">
+        <a href="/" class="flex items-center justify-center text-white font-semibold hover:text-gray-800" >
+            Home
+        </a>
+        <a href="/add-blog" class="items-center justify-center text-white font-semibold hover:text-gray-800">
+            Add-Blog
+        </a>
+        
+            <% if (isAuthenticated){%>
+                <form class="h-[80%] w-[15%]" method="post" action="/authentication/logout">
+                    <button class="h-[100%] w-[100%] bg-green-500 flex items-center justify-center text-white font-bold hover:bg-gray-800" type="submit">Logout</button>
+                </form>
+            <%}else{%>
+                <a href="/authentication/login" class="h-[80%] w-[15%] bg-green-500 flex items-center justify-center text-white font-bold hover:bg-gray-800">Login</a>
+            <%}%>
     </div>
 </nav>
