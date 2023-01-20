@@ -504,6 +504,9 @@ video {
 .h-\[20\%\] {
   height: 20%;
 }
+.h-\[100vh\] {
+  height: 100vh;
+}
 .min-h-\[90vh\] {
   min-height: 90vh;
 }
@@ -579,6 +582,10 @@ video {
 .bg-\[\#E1E5FE\] {
   --tw-bg-opacity: 1;
   background-color: rgb(225 229 254 / var(--tw-bg-opacity));
+}
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
 }
 .bg-purple-600 {
   --tw-bg-opacity: 1;

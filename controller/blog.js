@@ -16,7 +16,11 @@ const getDetailBlog=async(req,res,next)=>{
     }})
 
     if (edit){
-        res.status(200).render('update.ejs',{'blog':result,'isAuthenticated':isAuthenticated})
+        if(req.session.user.id==result.userId){
+            res.status(200).render('update.ejs',{'blog':result,'isAuthenticated':isAuthenticated})
+        }else{
+            res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":req.session.user.id})
+        }
     }else{
         res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":req.session.user.id})
     }
