@@ -7,8 +7,8 @@
         <%}else{%>
             <div class="min-h-[90vh] w-[100%] flex pt-5 box-border flex-wrap">
                 <% blogs.map((blog)=>{%>
-                    <div class="h-[40vh] w-[30%] bg-[#E1E5FE] ml-5 text-ellipsis" style="width:18rem">
-                            <h6 class="h-[20%] w-[100%] font-bold text-xl"><%=blog.title%></h6>
+                    <div class="h-[40vh] w-[30%] bg-[#E1E5FE] ml-5 text-ellipsis p-5 box-border" style="width:18rem">
+                            <h6 class="h-[20%] w-[100%] font-bold text-xl truncate"><%=blog.title%></h6>
                             <p class="line-clamp"><%=blog.description%></p>
                             <div class="h-[20%] w-[100%] flex flex-row items-center justify-around">
                                 <a href="/blogs/<%=blog.id%>" class="h-[80%] w-[80%] flex justify-center items-center bg-yellow-500 text-white font-bold cursor-pointer hover:bg-green-800">Read More</a>

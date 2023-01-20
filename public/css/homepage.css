@@ -80,6 +80,7 @@
 .line-clamp{
     display: -webkit-box;
     max-width: 100%;
+    height: 60%;
     -webkit-line-clamp: 6;
     -webkit-box-orient: vertical;
     overflow: hidden;
