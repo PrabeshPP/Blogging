@@ -22,7 +22,12 @@ const getDetailBlog=async(req,res,next)=>{
             res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":req.session.user.id})
         }
     }else{
-        res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":req.session.user.id})
+        if(req.session.user){
+            res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":req.session.user.id})
+        }else{
+            res.status(200).render('blog-detail',{'blog':result,'isAuthenticated':isAuthenticated,"userId":-999999999})
+        }
+        
     }
 }
 

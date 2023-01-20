@@ -1,15 +1,22 @@
 <%-include('./includes/head.ejs');-%>
 <body>
     
-    <div class="homeContainer">
-       <form method="post" action="/authentication/signup" class="w-[100%] min-h-[90vh]  flex flex-col items-center bg-red">
-            <input type="text" name="firstName" placeholder="First Name" required/>
-            <input type="text" name="lastName" placeholder="Last Name" required/>
-            <input type="email" name="email" placeholder="Email" required/>
-            <input type="password" name="password" placeholder="Password" required/>
-            <button>Sign Up</button>       
+    <div class="h-[100vh] w-[100%] flex items-center justify-center">
+       <form method="post" action="/authentication/signup" class="box-border shadow-xl h-[80%] w-[80%] rounded-lg bg-purple-700 flex flex-col justify-center items-center bg-red">
+        <p class="text-3xl mb-5 font-semibold text-white font-mono">Sign Up</p>
+            <div class="h-[10%] w-[70%] flex flex-row items-center">
+                <input class="h-[90%] w-[45%] rounded-full  pl-5 box-border outline-none  focus:border-rose-500 focus:border-2" type="text" name="firstName" placeholder="First Name" required/>
+                <input class="h-[90%] w-[45%] ml-[10%] rounded-full  pl-5 box-border outline-none  focus:border-rose-500 focus:border-2" type="text" name="lastName" placeholder="Last Name" required/>
+            </div>
+            <input class="h-[10%] w-[70%] font-sans rounded-full pl-5 box-border outline-none mt-5  focus:border-rose-500 focus:border-2" type="email" name="email" placeholder="Email" required/>
+            <input class="h-[10%] w-[70%] font-sans rounded-full pl-5 box-border outline-none mt-5  focus:border-rose-500 focus:border-2" type="password" id="password" name="password" placeholder="Password" required/>
+            <!-- <div class="h-[10%] w-[70%] flex flex-row items-center pl-2 mt-5">
+                <input type="checkbox" onclick="showPassword()"/>
+                <p class="ml-2 text-white font-semibold">Show Password</p>
+            </div> -->
+            <button class="h-[10%] w-[50%] bg-green-500 text-white text-xl font-bold mt-5 rounded-lg hover:bg-gray-900">Sign Up</button>       
        </form>
     </div>
-    <script></script>
+    <!-- <script src="/javascript/showPassword.js"></script> -->
 </body>
 <%-include('./includes/end.ejs');-%>
